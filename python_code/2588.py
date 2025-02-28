@@ -1,10 +1,5 @@
-import sys
-
-numbers = []
-for i in range(2):
-    numbers.append(sys.stdin.readline().strip())
-
-num1,num2 = numbers
+num1 = input()
+num2 = input()
 
 for digit2 in reversed(num2):
     output = []
@@ -12,12 +7,8 @@ for digit2 in reversed(num2):
 
     for digit1 in reversed(num1):
         multiple = int(digit2) * int(digit1)
-        rest = multiple % 10
-        
-        if extra > 0:
-            rest += extra
-
-        extra = multiple // 10
+        rest = (multiple + extra) % 10
+        extra = (multiple + extra) // 10
 
         output.insert(0, rest)
 
