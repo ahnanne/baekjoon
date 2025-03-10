@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
     const int EMPTY = 0;
@@ -18,7 +19,7 @@ int main() {
             break;
         }
 
-        if (prev == WHITESPACE && (curr != WHITESPACE && curr != '\n')) {
+        if (isspace(prev) && !isspace(curr)) {
             answer++;
         }
 
